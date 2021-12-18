@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>Document</title>
+    <style type="text/css">
+        #dragBox, #dropBox{
+            float:left ;
+            padding: 10px;
+            margin: 10px;
+
+        }
+        #dragBox{
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+        }
+        #dropBox{
+            background-color: red;
+            width: 1000px;
+            height: 1000px;
+        }
+    </style>
+    <script type="text/javascript">
+        function dragStart(ev){
+            ev.dataTransfer.effectAllowed ='move';
+            ev.dataTransfer.setData("Text",ev.target.getAttribute('id'));
+            ev.dataTransfer.setDragImage(ev.target,0,0);   
+         return true;
+        }
+
+        function dragEnter(ev){
+            event.preventDefault();
+            return true;
+        }
+        function dragOver(ev){
+            return false;
+        }
+        function dragDrop(ev){
+            var src= ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(src));
+            ev.stopPropagation();
+            return false;
+
+        }
+
+
+    </script>
+</head>
+<body>
+
+    <center>
+        <h1> Drag and drop  </h1>
+        <div id ="dragBox" draggable="true" ondragstart="return dragStart(event)">
+        <p>Drag me</p>
+        </div>
+        <div id ="dropBox" ondragenter="return dragEnter(event)" ondrop="dragDrop(event)" 
+        ondragover=" return dragOver(event)" >Drop Area </div>
+    </center>
+    
+</body>
+</html>

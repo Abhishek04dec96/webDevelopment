@@ -1,0 +1,36 @@
+body{
+    margin: 0px;
+    font-weight: 500 ;
+    font-size: 40px ;
+}
+
+.leftSide{
+    position:fixed;
+    padding: auto;
+    background-color:rgb(17,17,17);
+    color: white;
+    width: 50% ;
+
+    
+}
+
+.rigtSide{
+    position: fixed;
+    margin-left: 50%;
+    background-color:red;
+    color: white;
+    padding: auto;
+    width: 50% ;   
+}
+.split{
+    
+  
+    height: 100% ;
+  
+    text-align: center;
+}
+.Parent{
+    display:flex ;
+    flex-direction: row;
+    height: 100% ;
+}

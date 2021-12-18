@@ -1,0 +1,34 @@
+selector {prop: value }
+
+1 . * :- for entire file 
+2.  div :-  for a :tag 
+3.  .className :- for class 
+4.   #idName :- for id 
+5.  parentNmae > childName :-  
+6.  tagName[ type ="text"] 
+
+ name1 ,name2 ,name3 {
+    color:black; }
+
+
+Value related to  :- 
+px :- pixel
+%  :- percentage
+in :- inces 
+cm :-cenimeter
+mm :- milimeter
+em :- parent based :- pt  
+pt :- 1/72 inch 
+pc :- picas  1 inch = 6 pc
+
+value for color :- 
+
+rgb :-  
+
+hex code :- #RRGGBB
+ short hex code :- #RGB
+
+keyword : 
+
+
+prop :-

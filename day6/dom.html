@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getSq(){
+            var num = document.getElementById("number").innerHTML.value;
+            alert(num*num);
+            var abc =document.getElementById("test").style.color; 
+            alert(abc) ;
+        }
+
+    </script>
+</head>
+<body>
+
+    <form >
+        <input type="text" id="number"  name="test" >
+        <input type="button" value="square" onclick="getSq()">
+        <div id ="test" style="color: aqua; font-size:100px;"> abhishek Goswami  </div>
+    </form>
+
+    
+</body>
+</html>
