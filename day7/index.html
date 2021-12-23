@@ -46,11 +46,14 @@
         </div>
     </div>
 </div>
+<div class="row">
+    <span id="winnerMsg" > Game is on </span>
+</div>
 </div>
     <div class="row" id="section3">
         <button type="button" class=" col-md-4 btn btn-primary" id='p1Button'>Player1</button>
         <button type="button" class=" col-md-4 btn btn-secondary" id='p2Button'>Player2</button>
-        <button type="button" class=" col-md-4 btn btn-danger">Reset</button>
+        <button type="button" class=" col-md-4 btn btn-danger" id="resetButton">Reset</button>
 
 
     </div>
@@ -58,8 +61,67 @@
 
 
 </div>
+<script>
 
-    <!-- JavaScript Bundle with Popper -->
+const p1 = {
+    score: 0,
+    button: document.querySelector('#p1Button'),
+    display: document.querySelector('#p1display')
+}
+const p2 = {
+    score: 0,
+    button: document.querySelector('#p2Button'),
+    display: document.querySelector('#p2display')
+}
+
+const winningScore = document.querySelector('#inputGroupSelect01');
+
+
+function playerwin(playernumber){
+    if (winningScore.value == p1.score || winningScore.value == p2.score ){
+        p1.button.disabled=true;
+        p2.button.disabled=true;
+        document.getElementById("winnerMsg").textContent = " winner is " +playernumber ;
+    }
+}
+
+
+function updateScoresp1(){
+    if(winningScore.value > p1.score ){
+    p1.score+=1;
+    p1.display.textContent = p1.score;
+    playerwin("player 1");
+    }
+    
+}
+function updateScoresp2(){
+    if(winningScore.value > p2.score ){
+    p2.score+=1;
+    p2.display.textContent = p2.score;
+    playerwin("player 2");
+    }
+    
+}
+
+
+
+
+document.querySelector('#resetButton').
+addEventListener('click',function(){
+    p1.score = 0;
+    p2.score =0;
+    p1.display.textContent=p1.score;
+    p2.display.textContent=p2.score;
+    p1.button.disabled=false;
+    p2.button.disabled=false;
+});
+
+p1.button.addEventListener('click', function () {
+    updateScoresp1()});
+p2.button.addEventListener('click', function () {
+    updateScoresp2()});
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
